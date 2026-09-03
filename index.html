@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Painel de Produtos</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Painel de Produtos</h1>
+        <p>Escolha uma categoria</p>
+    </header>
+
+    <main>
+
+        <nav class="filtros">
+            <button id="todos" class="selecionado">Todos</button>
+            <button id="roupas">Roupas</button>
+            <button id="calcados">Calçados</button>
+            <button id="acessorios">Acessórios</button>
+        </nav>
+
+        <section class="produtos">
+
+            <article class="card roupas catalogo">
+                <div class="imagem camisa"></div>
+                <h2>Camiseta</h2>
+                <p class="preco">R$ 59,90</p>
+                <button class="comprar">Adicionar</button>
+            </article>
+
+            <article class="card roupas catalogo">
+                <div class="imagem calca"></div>
+                <h2>Calça Jeans</h2>
+                <p class="preco">R$ 129,90</p>
+                <button class="comprar">Adicionar</button>
+            </article>
+
+            <article class="card calcados catalogo">
+                <div class="imagem tenis"></div>
+                <h2>Tênis</h2>
+                <p class="preco">R$ 199,90</p>
+                <button class="comprar">Adicionar</button>
+            </article>
+
+            <article class="card calcados catalogo">
+                <div class="imagem sapato"></div>
+                <h2>Sapato</h2>
+                <p class="preco">R$ 179,90</p>
+                <button class="comprar">Adicionar</button>
+            </article>
+
+            <article class="card acessorios catalogo">
+                <div class="imagem relogio"></div>
+                <h2>Relógio</h2>
+                <p class="preco">R$ 249,90</p>
+                <button class="comprar">Adicionar</button>
+            </article>
+
+            <article class="card acessorios catalogo">
+                <div class="imagem oculos"></div>
+                <h2>Óculos</h2>
+                <p class="preco">R$ 99,90</p>
+                <button class="comprar">Adicionar</button>
+            </article>
+
+            <article class="card calcados catalogo">
+                <div class="imagem tenis-esportivo"></div>
+                <h2>Tênis esportivo</h2>
+                <p class="preco">R$ 85,90</p>
+                <button class="comprar">Adicionar</button>
+            </article>
+
+            <article class="card acessorios catalogo">
+                <div class="imagem pulseira"></div>
+                <h2>Pulseira</h2>
+                <p class="preco">R$ 120,90</p>
+                <button class="comprar">Adicionar</button>
+            </article>
+
+            <article class="card roupas catalogo">
+                <div class="imagem moletom"></div>
+                <h2>Moletom</h2>
+                <p class="preco">R$ 140,90</p>
+                <button class="comprar">Adicionar</button>
+            </article>
+
+        </section>
+
+        <section class="carrinho">
+
+            <h2>Carrinho</h2>
+
+            <p>Produtos adicionados: <strong id="quantidade">0</strong></p>
+
+            <p>Total: R$ <strong id="total">0.00</strong></p>
+
+            <div class="itens"></div>
+
+            <button id="limpar">Limpar carrinho</button>
+
+        </section>
+
+    </main>
+
+    <script src="scripts/filtro.js"></script>
+    <script src="scripts/carrinho.js"></script>
+
+</body>
+</html>
+
+<!-- article.card.acessorios>div.imagem.bone+h2+p+button.comprar -->

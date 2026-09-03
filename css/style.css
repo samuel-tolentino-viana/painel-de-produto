@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eeeeee;
+    color: #222;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+
+header {
+    background-color: #252525;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+main {
+    width: min(1000px, 92%);
+    margin: 30px auto;
+}
+
+/* FILTROS */
+
+.filtros {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+button {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    cursor: pointer;
+    background-color: #ddd;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+.filtros .selecionado {
+    background-color: #252525;
+    color: white;
+}
+
+/* PRODUTOS */
+
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h2 {
+    margin: 15px 0 8px;
+}
+
+.card p {
+    margin-bottom: 15px;
+}
+
+.comprar {
+    background-color: #252525;
+    color: white;
+    width: 100%;
+}
+
+/* IMAGENS */
+
+.imagem {
+    height: 180px;
+    border-radius: 8px;
+}
+
+.camisa {
+    background-color: #e8b4b8;
+}
+
+.calca {
+    background-color: #7897b5;
+}
+
+.tenis {
+    background-color: #d6d6d6;
+}
+
+.sapato {
+    background-color: #805b43;
+}
+
+.relogio {
+    background-color: #a28f8f;
+}
+
+.oculos {
+    background-color: #444;
+}
+
+.tenis-esportivo {
+    background-color: #7fa1a6;
+}
+
+.pulseira {
+    background-color: #808e6a;
+}
+
+.moletom {
+    background-color: #8d7796;
+}
+
+/* CARRINHO */
+
+.carrinho {
+    background-color: white;
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.carrinho h2 {
+    margin-bottom: 15px;
+}
+
+.carrinho p {
+    margin: 8px 0;
+}
+
+.itens {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+#limpar {
+    margin-top: 15px;
+    background-color: #c94c4c;
+    color: white;
+}
+
+/* ESCONDER */
+
+.desativar {
+    display: none;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 700px) {
+
+    .produtos {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .itens {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .itens .card .imagem {
+        height: 150px;
+    }
+
+    .produtos {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .imagem {
+        height: 170px;
+    }
+
+}
+
