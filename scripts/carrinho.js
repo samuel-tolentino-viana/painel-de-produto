@@ -1,10 +1,6 @@
 const produtos = document.querySelector('.produtos');
 const colocarCarrinho = document.querySelectorAll('.comprar');
 const itens = document.querySelector('.itens');
-const qtd = document.querySelector('#quantidade');
-const quantidadeDeItens = Number(qtd);
-const tt = document.querySelector('#total');
-const total = Number(tt.textContent);
 const limpar = document.querySelector('#limpar');
 
 function adicionarAoCarrinho(parametro) {
@@ -14,23 +10,25 @@ function removerDoCarrinho(parametro) {
     produtos.appendChild(parametro);
 };
 
-function somarPrecos(cardNoCarrinho) {
-    quantidadeDeItens++;
-};
-
 for(let percorrerLista of colocarCarrinho) {
     percorrerLista.addEventListener('click', () => {
-        const cards = document.querySelectorAll('.card');
-        if(percorrerLista.parentElement.classList.contains('catalogo')) {
-            adicionarAoCarrinho(percorrerLista.parentElement);
+        const card = percorrerLista.parentElement;
+
+        if(card.classList.contains('catalogo')) {
+
+            const pr = Number(card.querySelector('span'));
+            console.log(pr)
+            adicionarAoCarrinho(card);
             percorrerLista.innerText = 'Remover';
-            percorrerLista.parentElement.classList.remove('catalogo');
+            card.classList.remove('catalogo');
+
         } else {
-            removerDoCarrinho(percorrerLista.parentElement);
-            percorrerLista.parentElement.classList.add('catalogo');
+
+            removerDoCarrinho(card);
+            card.classList.add('catalogo');
             percorrerLista.innerText = 'Adicionar';
+
         };
-        somarPrecos(cards);
     });
 };
 
