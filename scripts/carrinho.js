@@ -2,6 +2,8 @@ const produtos = document.querySelector('.produtos');
 const colocarCarrinho = document.querySelectorAll('.comprar');
 const itens = document.querySelector('.itens');
 const limpar = document.querySelector('#limpar');
+const quantidade = document.querySelector('#quantidade');
+const precoTotal = document.querySelector('#total');
 
 function adicionarAoCarrinho(parametro) {
     itens.appendChild(parametro);
@@ -10,32 +12,58 @@ function removerDoCarrinho(parametro) {
     produtos.appendChild(parametro);
 };
 
-for(let percorrerLista of colocarCarrinho) {
-    percorrerLista.addEventListener('click', () => {
-        const card = percorrerLista.parentElement;
+function somarPrecos() {
+    let total = 0;
+
+    for(let produto of itens.children) {
+        const p = produto.querySelector('span').textContent;
+        const preco = Number(p);
+
+        total += preco;
+    };
+
+    precoTotal.innerText = total.toFixed(2);
+};
+
+function contarItens() {
+    quantidade.innerText = itens.children.length;
+};
+
+for(let botoes of colocarCarrinho) {
+    botoes.addEventListener('click', () => {
+        const card = botoes.parentElement;
 
         if(card.classList.contains('catalogo')) {
 
-            const pr = Number(card.querySelector('span'));
-            console.log(pr)
             adicionarAoCarrinho(card);
-            percorrerLista.innerText = 'Remover';
+            botoes.innerText = 'Remover';
             card.classList.remove('catalogo');
 
         } else {
 
             removerDoCarrinho(card);
             card.classList.add('catalogo');
-            percorrerLista.innerText = 'Adicionar';
+            botoes.innerText = 'Adicionar';
 
         };
+
+        somarPrecos();
+        contarItens();
+
     });
 };
 
 limpar.addEventListener('click', () => {
-    for(let percorrerlista of colocarCarrinho) {
-        produtos.appendChild(percorrerlista.parentElement);
-        percorrerlista.innerText = 'Adicionar';
-        percorrerlista.parentElement.classList.add('catalogo');
+    for(let botoes of colocarCarrinho) {
+
+        const card = botoes.parentElement;
+
+        produtos.appendChild(card);
+
+        botoes.innerText = 'Adicionar';
+        card.classList.add('catalogo');
+
     };
+    somarPrecos();
+    contarItens();
 });
